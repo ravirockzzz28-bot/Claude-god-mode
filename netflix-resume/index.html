@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ravi — The Series</title>
+<meta name="description" content="A Netflix-style streaming resume.">
+<style>
+:root{--red:#e50914;--bg:#141414;--card:#1f1f1f;--tx:#e5e5e5;--mute:#9a9a9a;--g:#46d369}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+/* ---------- intro splash ---------- */
+#intro{position:fixed;inset:0;z-index:100;background:#000;display:grid;place-items:center;transition:opacity .8s,visibility .8s}
+#intro.done{opacity:0;visibility:hidden}
+#intro svg{width:min(80vw,640px)}
+.ltr{font:900 120px "Bebas Neue",Impact,sans-serif;fill:none;stroke:var(--red);stroke-width:2;stroke-dasharray:600;stroke-dashoffset:600;animation:draw 1.6s ease forwards,fill 1s 1.5s forwards}
+.ltr:nth-child(2){animation-delay:.15s,1.65s}.ltr:nth-child(3){animation-delay:.3s,1.8s}.ltr:nth-child(4){animation-delay:.45s,1.95s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fill{to{fill:var(--red);stroke:var(--red)}}
+.ribbon{stroke:var(--red);stroke-width:14;fill:none;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.8s .2s ease forwards;opacity:.8}
+.ribbon.b{stroke:#8f0610;animation-delay:.5s}
+.skip{position:fixed;right:24px;bottom:24px;z-index:101;background:#0008;border:1px solid #fff5;color:#fff;padding:8px 16px;border-radius:4px;cursor:pointer}
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:28px;padding:16px 4%;background:linear-gradient(#000c,transparent);transition:background .3s}
+nav.solid{background:#141414}
+.logo{color:var(--red);font:900 28px Impact,sans-serif;letter-spacing:2px}
+nav a.l{font-size:14px;color:#ddd;transition:color .2s}nav a.l:hover{color:#fff}
+.sp{flex:1}
+.avatar{width:32px;height:32px;border-radius:4px;background:linear-gradient(135deg,#e50914,#7a0a10);display:grid;place-items:center;font-weight:700}
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;padding:0 4% 8vh;overflow:hidden;background:radial-gradient(ellipse at 75% 30%,#3b0a0e 0%,#141414 65%)}
+.hero svg.bg{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 4%,transparent 45%),linear-gradient(to right,#000a,transparent 60%)}
+.hero .in{position:relative;z-index:2;max-width:620px}
+.badge-n{display:flex;align-items:center;gap:8px;color:var(--red);font-weight:700;letter-spacing:4px;font-size:13px;margin-bottom:12px}
+.badge-n img{height:22px;border-radius:2px}
+h1{font:900 clamp(48px,9vw,110px)/.95 Impact,sans-serif;letter-spacing:2px;text-shadow:0 4px 24px #000}
+.meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:18px 0;font-size:15px}
+.match{color:var(--g);font-weight:700}
+.tag{border:1px solid #fff6;padding:0 6px;font-size:12px;line-height:20px}
+.syn{font-size:18px;line-height:1.5;text-shadow:0 2px 6px #000;margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 26px;border-radius:4px;border:0;font-size:18px;font-weight:700;cursor:pointer;margin:0 10px 10px 0;transition:transform .2s,background .2s}
+.btn:hover{transform:scale(1.05)}
+.btn.p{background:#fff;color:#000}.btn.p:hover{background:#ddd}
+.btn.s{background:#6d6d6eb3;color:#fff}
+/* ---------- rows ---------- */
+section{padding:28px 4% 8px}
+h2{font-size:22px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+h2 small{font-size:13px;color:var(--mute);font-weight:400}
+.row{display:flex;gap:10px;overflow-x:auto;padding:14px 4px 40px;scroll-snap-type:x proximity;scrollbar-width:none}
+.row::-webkit-scrollbar{display:none}
+.card{flex:0 0 280px;scroll-snap-align:start;background:var(--card);border-radius:6px;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s;position:relative}
+.card:hover{transform:scale(1.12);z-index:5;box-shadow:0 14px 40px #000}
+.thumb{height:158px;position:relative;display:grid;place-items:center;overflow:hidden}
+.thumb svg{width:84px;height:84px}
+.thumb .sn{position:absolute;left:10px;bottom:6px;font:900 54px Impact;color:#fff3;line-height:1}
+.thumb:before{content:"";position:absolute;inset:-50%;background:conic-gradient(from 0deg,transparent,#fff2,transparent 30%);animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cb{padding:12px 14px 16px}
+.cb h3{font-size:16px;margin-bottom:4px}
+.cb p{font-size:13px;color:var(--mute);line-height:1.45}
+.cb .m{font-size:12px;color:var(--g);margin-bottom:6px}
+.prog{height:3px;background:#444;margin-top:10px}.prog i{display:block;height:100%;background:var(--red);width:0;transition:width 1.4s}
+.cast .card{flex-basis:190px;text-align:center;background:transparent}
+.ring{width:130px;height:130px;margin:10px auto 8px;position:relative}
+.ring svg.r{position:absolute;inset:0;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:6}
+.ring .t{stroke:#333}.ring .v{stroke:var(--red);stroke-linecap:round;stroke-dasharray:314;stroke-dashoffset:314;transition:stroke-dashoffset 1.6s}
+.ring .g{position:absolute;inset:22px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:42px;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-5px) scale(1.06)}}
+.cast .cb h3{font-size:15px}
+/* credits */
+.credits{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;font-size:14px;line-height:1.7;padding:6px 0 30px}
+.credits b{color:var(--mute);font-weight:400}
+.credits h4{font-size:12px;letter-spacing:2px;color:var(--red);margin-bottom:8px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{background:#2b2b2b;border-radius:20px;padding:4px 14px;font-size:13px}
+/* awards */
+.award{flex-basis:230px;border:1px solid #333;background:linear-gradient(160deg,#2a2208,#1b1b1b)}
+.award .thumb{height:110px}
+/* timeline scroll credits */
+.roll{height:220px;overflow:hidden;position:relative;mask-image:linear-gradient(transparent,#000 20%,#000 80%,transparent);text-align:center;color:var(--mute)}
+.roll div{animation:roll 24s linear infinite;line-height:2.1}
+.roll:hover div{animation-play-state:paused}
+@keyframes roll{from{transform:translateY(220px)}to{transform:translateY(-100%)}}
+/* modal */
+#modal{position:fixed;inset:0;z-index:80;background:#000b;display:none;place-items:center;padding:20px;overflow:auto}
+#modal.open{display:grid}
+.mbox{background:#181818;border-radius:10px;width:min(820px,100%);overflow:hidden;animation:pop .35s ease}
+@keyframes pop{from{transform:scale(.85);opacity:0}}
+.mbox .top{height:230px;position:relative;display:flex;align-items:flex-end;padding:20px;background:linear-gradient(135deg,#7a0a10,#141414)}
+.mbox .top h3{font:900 44px Impact;z-index:2}
+.x{position:absolute;right:14px;top:14px;background:#181818;border:0;color:#fff;width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer;z-index:3}
+.mbody{padding:20px 28px 30px}
+.ep{display:flex;gap:16px;padding:16px 8px;border-bottom:1px solid #333;opacity:0;animation:fi .5s forwards}
+.ep .n{font-size:24px;color:var(--mute);width:28px}
+.ep p{color:var(--mute);font-size:14px;line-height:1.5}
+@keyframes fi{to{opacity:1}}
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:all .8s}.rv.in{opacity:1;transform:none}
+footer{padding:50px 4% 70px;text-align:center;color:var(--mute);font-size:13px}
+footer .soc{display:flex;gap:18px;justify-content:center;margin-bottom:18px;font-size:15px}
+footer .soc a{color:#fff;border:1px solid #444;padding:8px 18px;border-radius:4px;transition:background .2s}
+footer .soc a:hover{background:var(--red);border-color:var(--red)}
+@media(max-width:700px){nav a.l{display:none}.card{flex-basis:230px}.syn{font-size:16px}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ============ INTRO ============ -->
+<div id="intro">
+  <svg viewBox="0 0 640 220" aria-label="Ravi presents">
+    <path class="ribbon" d="M20 190 C160 20 300 20 440 110 S600 200 620 30"/>
+    <path class="ribbon b" d="M20 30 C160 200 300 200 440 110 S600 20 620 190"/>
+    <g text-anchor="middle">
+      <text class="ltr" x="190" y="150">R</text><text class="ltr" x="270" y="150">A</text>
+      <text class="ltr" x="350" y="150">V</text><text class="ltr" x="420" y="150">I</text>
+    </g>
+  </svg>
+</div>
+<button class="skip" id="skip">Skip Intro ▸▸</button>
+
+<nav id="nav">
+  <div class="logo">RAVI</div>
+  <a class="l" href="#seasons">Seasons</a><a class="l" href="#cast">Cast</a>
+  <a class="l" href="#clips">Clips</a><a class="l" href="#awards">Awards</a><a class="l" href="#credits">Credits</a>
+  <div class="sp"></div><div class="avatar">R</div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <svg class="bg" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#e50914"/><stop offset="1" stop-color="#ff7b54"/></linearGradient></defs>
+    <g fill="none" stroke="url(#gr)" stroke-width="1.2">
+      <circle cx="600" cy="170" r="40"><animate attributeName="r" values="40;180;40" dur="9s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0;1" dur="9s" repeatCount="indefinite"/></circle>
+      <circle cx="600" cy="170" r="90"><animate attributeName="r" values="90;240;90" dur="9s" begin="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0;1" dur="9s" begin="3s" repeatCount="indefinite"/></circle>
+      <path d="M0 330 Q200 250 400 330 T800 300"><animate attributeName="d" dur="7s" repeatCount="indefinite" values="M0 330 Q200 250 400 330 T800 300;M0 300 Q200 370 400 300 T800 330;M0 330 Q200 250 400 330 T800 300"/></path>
+      <path d="M0 360 Q200 290 400 360 T800 340" opacity=".6"><animate attributeName="d" dur="9s" repeatCount="indefinite" values="M0 360 Q200 290 400 360 T800 340;M0 340 Q200 400 400 340 T800 360;M0 360 Q200 290 400 360 T800 340"/></path>
+    </g>
+    <g fill="#e50914"><circle cx="120" cy="90" r="2"><animate attributeName="cy" values="90;60;90" dur="4s" repeatCount="indefinite"/></circle><circle cx="300" cy="140" r="3"><animate attributeName="cy" values="140;100;140" dur="5s" repeatCount="indefinite"/></circle><circle cx="480" cy="60" r="2"><animate attributeName="cy" values="60;90;60" dur="6s" repeatCount="indefinite"/></circle></g>
+  </svg>
+  <div class="in">
+    <div class="badge-n"><img src="assets/equalizer.gif" alt=""> NOW STREAMING</div>
+    <h1 id="title"></h1>
+    <div class="meta"><span class="match" id="match"></span><span id="year"></span><span class="tag" id="rating"></span><span id="seasonsN"></span><span class="tag">HD</span></div>
+    <p class="syn" id="syn"></p>
+    <a class="btn p" href="#seasons">▶ Play</a><a class="btn s" href="#credits">ⓘ More Info</a><a class="btn s" id="hire" href="#">＋ My List</a>
+  </div>
+</header>
+
+<section id="seasons"><h2>Seasons <small>pick up where you left off</small></h2><div class="row" id="seasonRow"></div></section>
+<section id="cast" class="cast"><h2>Starring <small>skills &amp; tools</small></h2><div class="row" id="castRow"></div></section>
+<section id="clips"><h2>Trailers &amp; Clips <small>featured projects</small></h2><div class="row" id="clipRow"></div></section>
+<section id="awards"><h2>Awards &amp; Nominations</h2><div class="row" id="awardRow"></div></section>
+
+<section id="credits" class="rv">
+  <h2>About this series</h2>
+  <div class="credits" id="creditGrid"></div>
+  <h2>End Credits <small>hover to pause</small></h2>
+  <div class="roll"><div id="roll"></div></div>
+</section>
+
+<footer>
+  <div class="soc" id="soc"></div>
+  <p>Not affiliated with any streaming service. Built with Claude Code · © <span id="yr"></span></p>
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true"><div class="mbox"><div class="top"><button class="x" id="mx" aria-label="Close">✕</button><h3 id="mt"></h3></div><div class="mbody" id="mb"></div></div></div>
+
+<script>
+/* =====================================================================
+   EDIT ONLY THIS BLOCK — everything on the page is generated from it.
+   Values marked [..] are placeholders: replace with your real details.
+   ===================================================================== */
+const DATA={
+  name:"RAVI", tagline:"The Series", year:2026, rating:"A+", match:98,
+  synopsis:"A driven engineer-turned-problem-solver turns raw data into decisions. Part analyst, part builder, always shipping. [Replace with your 2-line pitch.]",
+  genres:["Data & Analytics","Automation","Operations","Problem Solving"],
+  thisShowIs:["Detail-oriented","Curious","Fast-paced","Feel-good"],
+  directedBy:"Ravi", writtenBy:"Ravi & lots of coffee", producedBy:"[Your company / college]",
+  languages:["English","Hindi"], location:"[City, Country]",
+  seasons:[
+    {n:1,icon:"🎓",title:"Origins",span:"[2016 – 2020]",role:"[B.Tech / Degree, Institute]",blurb:"The pilot: foundations, first projects, first big failures.",c:["#1e3c72","#2a5298"],
+     eps:[["The Pilot","[Degree, branch, CGPA]"],["Side Quest","[Club / hackathon / internship]"],["Season Finale","[Final-year project]"]]},
+    {n:2,icon:"🛠️",title:"Rising Action",span:"[2020 – 2023]",role:"[Role, Company A]",blurb:"Learning the craft on the job and owning bigger problems.",c:["#7a0a10","#e50914"],
+     eps:[["Day One","[Onboarding & first deliverable]"],["Plot Twist","[Challenge you solved, with a number]"],["Cliffhanger","[Impact: saved X hrs / ₹ / %]"]]},
+    {n:3,icon:"🚀",title:"Present Day",span:"[2023 – Now]",role:"[Role, Company B]",blurb:"Leading, automating, and building with AI tools like Claude.",c:["#0f2027","#2c5364"],
+     eps:[["Streaming Now","[Current responsibilities]"],["Behind the Scenes","[Tools, dashboards, automations built]"],["Coming Soon","[What you're building next]"]]}
+  ],
+  cast:[ ["Python","🐍",90],["SQL","🗄️",85],["Excel / Power BI","📊",92],["Automation","⚙️",88],["AI / Claude","🤖",85],["Communication","🎤",80] ],
+  clips:[
+    {t:"Project Alpha",d:"[One-line story of the project]",tag:"Dashboard",icon:"📈",c:["#42275a","#734b6d"]},
+    {t:"Project Beta",d:"[One-line story of the project]",tag:"Automation",icon:"⚡",c:["#134e5e","#71b280"]},
+    {t:"Project Gamma",d:"[One-line story of the project]",tag:"AI",icon:"🧠",c:["#b24592","#f15f79"]},
+    {t:"Project Delta",d:"[One-line story of the project]",tag:"Analytics",icon:"🔍",c:["#232526","#414345"]}
+  ],
+  awards:[ ["Best Performance","[Award / recognition]","🏆"],["Rising Star","[Award / recognition]","⭐"],["Critics' Choice","[Certification]","🎖️"] ],
+  roll:["[Mentor / Manager name] — Executive Producer","[Team name] — Supporting Cast","[College] — Production House","Family & Friends — Special Thanks","Coffee — Fuel Partner"],
+  links:[["LinkedIn","https://www.linkedin.com/in/your-handle"],["GitHub","https://github.com/ravirockzzz28-bot"],["Email","mailto:ravirockzzz28@gmail.com"]]
+};
+/* ===================== renderer (no need to edit) ===================== */
+const $=s=>document.querySelector(s),h=(t,a,x="")=>`<${t} ${a||""}>${x}</${t}>`;
+document.title=`${DATA.name} — ${DATA.tagline}`;
+$("#title").textContent=DATA.name+" "+DATA.tagline.toUpperCase();
+$("#match").textContent=DATA.match+"% Match";$("#year").textContent=DATA.year;$("#rating").textContent=DATA.rating;
+$("#seasonsN").textContent=DATA.seasons.length+" Seasons";$("#syn").textContent=DATA.synopsis;$("#yr").textContent=new Date().getFullYear();
+const grad=c=>`background:linear-gradient(135deg,${c[0]},${c[1]})`;
+const glyph=e=>`<svg viewBox="0 0 100 100"><text x="50" y="68" font-size="60" text-anchor="middle">${e}</text><circle cx="50" cy="50" r="46" fill="none" stroke="#fff6" stroke-width="2" stroke-dasharray="6 8"><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="12s" repeatCount="indefinite"/></circle></svg>`;
+$("#seasonRow").innerHTML=DATA.seasons.map((s,i)=>`<div class="card" data-s="${i}" tabindex="0">
+ <div class="thumb" style="${grad(s.c)}">${glyph(s.icon)}<span class="sn">S${s.n}</span></div>
+ <div class="cb"><div class="m">${s.span}</div><h3>${s.title}</h3><p>${s.role}</p><p>${s.blurb}</p><div class="prog"><i data-w="${(i+1)*100/DATA.seasons.length}"></i></div></div></div>`).join("");
+$("#castRow").innerHTML=DATA.cast.map(([n,e,v])=>`<div class="card"><div class="ring"><svg class="r" viewBox="0 0 110 110"><circle class="t" cx="55" cy="55" r="50"/><circle class="v" cx="55" cy="55" r="50" data-v="${v}"/></svg><div class="g">${e}</div></div><div class="cb"><h3>${n}</h3><p>${v}% screen time</p></div></div>`).join("");
+$("#clipRow").innerHTML=DATA.clips.map(c=>`<div class="card"><div class="thumb" style="${grad(c.c)}">${glyph(c.icon)}</div><div class="cb"><div class="m">${c.tag}</div><h3>${c.t}</h3><p>${c.d}</p></div></div>`).join("");
+$("#awardRow").innerHTML=DATA.awards.map(([t,d,e])=>`<div class="card award"><div class="thumb">${glyph(e)}</div><div class="cb"><h3>${t}</h3><p>${d}</p></div></div>`).join("");
+const L=a=>`<div class="pills">${a.map(x=>`<span class="pill">${x}</span>`).join("")}</div>`;
+$("#creditGrid").innerHTML=`
+ <div><h4>CAST &amp; CREW</h4><b>Directed by:</b> ${DATA.directedBy}<br><b>Written by:</b> ${DATA.writtenBy}<br><b>Produced by:</b> ${DATA.producedBy}<br><b>Filmed in:</b> ${DATA.location}</div>
+ <div><h4>GENRES</h4>${L(DATA.genres)}</div>
+ <div><h4>THIS SHOW IS…</h4>${L(DATA.thisShowIs)}</div>
+ <div><h4>AUDIO &amp; SUBTITLES</h4>${L(DATA.languages)}</div>`;
+$("#roll").innerHTML=DATA.roll.join("<br>")+"<br><br>"+"— THE END · SEASON 4 COMING SOON —";
+$("#soc").innerHTML=DATA.links.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join("");
+$("#hire").href=DATA.links.find(l=>l[0]==="Email")?.[1]||"#";$("#hire").textContent="＋ Hire Me";
+/* modal with episodes */
+const M=$("#modal");
+function openS(i){const s=DATA.seasons[i];$("#mt").textContent=`S${s.n} · ${s.title}`;$(".mbox .top").style.background=`linear-gradient(135deg,${s.c[1]},#181818)`;
+ $("#mb").innerHTML=`<p style="color:var(--mute);margin-bottom:10px">${s.span} · ${s.role}</p><h3 style="margin:8px 0">Episodes</h3>`+s.eps.map((e,k)=>`<div class="ep" style="animation-delay:${k*.15}s"><div class="n">${k+1}</div><div><b>${e[0]}</b><p>${e[1]}</p></div></div>`).join("");M.classList.add("open")}
+document.addEventListener("click",e=>{const c=e.target.closest("[data-s]");if(c)openS(+c.dataset.s);if(e.target===M||e.target.id==="mx")M.classList.remove("open")});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")M.classList.remove("open");if(e.key==="Enter"&&document.activeElement.dataset.s)openS(+document.activeElement.dataset.s)});
+/* scroll effects */
+addEventListener("scroll",()=>$("#nav").classList.toggle("solid",scrollY>40));
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;en.target.classList.add("in");
+ en.target.querySelectorAll(".prog i").forEach(i=>i.style.width=i.dataset.w+"%");
+ en.target.querySelectorAll(".v").forEach(v=>v.style.strokeDashoffset=314-314*v.dataset.v/100)}),{threshold:.2});
+document.querySelectorAll("section").forEach(s=>{s.classList.add("rv");io.observe(s)});
+/* intro */
+const intro=$("#intro"),skip=$("#skip");
+const endIntro=()=>{intro.classList.add("done");skip.remove()};
+skip.onclick=endIntro;setTimeout(endIntro,4200);
+</script>
+</body>
+</html>
