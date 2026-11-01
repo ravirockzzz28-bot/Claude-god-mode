@@ -24,6 +24,7 @@ npx skills add heygen-com/hyperframes
 ## Videos
 
 - [`videos/late-signals/`](videos/late-signals/): 15 s 9:16 teaser for the podcast *Late Signals*, made with the motionsmith skill.
+- [`videos/skill-challenge/`](videos/skill-challenge/): 31 s 9:16 voice-over reply (ElevenLabs voice) challenging the paid-skill claim, with the teaser as proof.
 
 ## My own skills (`skills/`)
 

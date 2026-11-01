@@ -1,0 +1,673 @@
+{
+  "preset": "voice",
+  "max_chars": 24,
+  "cps": 22.0,
+  "lines": [
+    {
+      "index": 0,
+      "text": "Hey Miftahul. You",
+      "start": 0.15,
+      "end": 1.386,
+      "chars": 17,
+      "reading_cps": 13.75,
+      "timing": "source",
+      "words": [
+        {
+          "text": "Hey",
+          "start": 0.15,
+          "end": 0.295
+        },
+        {
+          "text": "Miftahul.",
+          "start": 0.332,
+          "end": 0.877
+        },
+        {
+          "text": "You",
+          "start": 1.314,
+          "end": 1.386
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "text": "said the secret",
+      "start": 1.459,
+      "end": 2.141,
+      "chars": 15,
+      "reading_cps": 22.0,
+      "timing": "source",
+      "words": [
+        {
+          "text": "said",
+          "start": 1.459,
+          "end": 1.532
+        },
+        {
+          "text": "the",
+          "start": 1.604,
+          "end": 1.677
+        },
+        {
+          "text": "secret",
+          "start": 1.75,
+          "end": 2.114
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "isn't the prompt.",
+      "start": 2.186,
+      "end": 3.059,
+      "chars": 17,
+      "reading_cps": 19.48,
+      "timing": "source",
+      "words": [
+        {
+          "text": "isn't",
+          "start": 2.186,
+          "end": 2.405
+        },
+        {
+          "text": "the",
+          "start": 2.441,
+          "end": 2.491
+        },
+        {
+          "text": "prompt.",
+          "start": 2.623,
+          "end": 3.059
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "text": "It's your skill file.",
+      "start": 3.35,
+      "end": 4.32,
+      "chars": 21,
+      "reading_cps": 21.65,
+      "timing": "source",
+      "words": [
+        {
+          "text": "It's",
+          "start": 3.35,
+          "end": 3.495
+        },
+        {
+          "text": "your",
+          "start": 3.568,
+          "end": 3.641
+        },
+        {
+          "text": "skill",
+          "start": 3.714,
+          "end": 3.932
+        },
+        {
+          "text": "file.",
+          "start": 4.005,
+          "end": 4.32
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "text": "So we ran a test.",
+      "start": 4.732,
+      "end": 5.96,
+      "chars": 17,
+      "reading_cps": 13.84,
+      "timing": "source",
+      "words": [
+        {
+          "text": "So",
+          "start": 4.732,
+          "end": 4.95
+        },
+        {
+          "text": "we",
+          "start": 5.168,
+          "end": 5.314
+        },
+        {
+          "text": "ran",
+          "start": 5.386,
+          "end": 5.459
+        },
+        {
+          "text": "a",
+          "start": 5.496,
+          "end": 5.546
+        },
+        {
+          "text": "test.",
+          "start": 5.714,
+          "end": 5.96
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "No subscription.",
+      "start": 6.405,
+      "end": 7.22,
+      "chars": 16,
+      "reading_cps": 19.62,
+      "timing": "source",
+      "words": [
+        {
+          "text": "No",
+          "start": 6.405,
+          "end": 6.477
+        },
+        {
+          "text": "subscription.",
+          "start": 6.55,
+          "end": 7.22
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "No paywall. No",
+      "start": 7.35,
+      "end": 8.368,
+      "chars": 14,
+      "reading_cps": 13.75,
+      "timing": "source",
+      "words": [
+        {
+          "text": "No",
+          "start": 7.35,
+          "end": 7.423
+        },
+        {
+          "text": "paywall.",
+          "start": 7.568,
+          "end": 8.08
+        },
+        {
+          "text": "No",
+          "start": 8.223,
+          "end": 8.368
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "secret file.",
+      "start": 8.441,
+      "end": 9.095,
+      "chars": 12,
+      "reading_cps": 18.33,
+      "timing": "source",
+      "words": [
+        {
+          "text": "secret",
+          "start": 8.441,
+          "end": 8.732
+        },
+        {
+          "text": "file.",
+          "start": 8.805,
+          "end": 9.095
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "Just Claude, and a free,",
+      "start": 9.459,
+      "end": 10.82,
+      "chars": 24,
+      "reading_cps": 17.64,
+      "timing": "source",
+      "words": [
+        {
+          "text": "Just",
+          "start": 9.459,
+          "end": 9.604
+        },
+        {
+          "text": "Claude,",
+          "start": 9.677,
+          "end": 10.06
+        },
+        {
+          "text": "and",
+          "start": 10.223,
+          "end": 10.273
+        },
+        {
+          "text": "a",
+          "start": 10.332,
+          "end": 10.405
+        },
+        {
+          "text": "free,",
+          "start": 10.477,
+          "end": 10.82
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "open-source skill",
+      "start": 10.95,
+      "end": 11.723,
+      "chars": 17,
+      "reading_cps": 22.0,
+      "timing": "source",
+      "words": [
+        {
+          "text": "open-source",
+          "start": 10.95,
+          "end": 11.35
+        },
+        {
+          "text": "skill",
+          "start": 11.495,
+          "end": 11.641
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "anyone can install.",
+      "start": 11.786,
+      "end": 12.72,
+      "chars": 19,
+      "reading_cps": 20.35,
+      "timing": "source",
+      "words": [
+        {
+          "text": "anyone",
+          "start": 11.786,
+          "end": 12.077
+        },
+        {
+          "text": "can",
+          "start": 12.15,
+          "end": 12.223
+        },
+        {
+          "text": "install.",
+          "start": 12.296,
+          "end": 12.72
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "This is what it made.",
+      "start": 13.241,
+      "end": 14.195,
+      "chars": 21,
+      "reading_cps": 22.0,
+      "timing": "source",
+      "words": [
+        {
+          "text": "This",
+          "start": 13.241,
+          "end": 13.459
+        },
+        {
+          "text": "is",
+          "start": 13.532,
+          "end": 13.604
+        },
+        {
+          "text": "what",
+          "start": 13.677,
+          "end": 13.75
+        },
+        {
+          "text": "it",
+          "start": 13.786,
+          "end": 13.836
+        },
+        {
+          "text": "made.",
+          "start": 13.896,
+          "end": 14.16
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "A fifteen-second",
+      "start": 14.477,
+      "end": 15.35,
+      "chars": 16,
+      "reading_cps": 18.33,
+      "timing": "source",
+      "words": [
+        {
+          "text": "A",
+          "start": 14.477,
+          "end": 14.55
+        },
+        {
+          "text": "fifteen-second",
+          "start": 14.696,
+          "end": 15.35
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "podcast teaser.",
+      "start": 15.423,
+      "end": 16.295,
+      "chars": 15,
+      "reading_cps": 17.19,
+      "timing": "source",
+      "words": [
+        {
+          "text": "podcast",
+          "start": 15.423,
+          "end": 15.859
+        },
+        {
+          "text": "teaser.",
+          "start": 15.932,
+          "end": 16.295
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "Grain, glow, sound.",
+      "start": 16.732,
+      "end": 18.6,
+      "chars": 19,
+      "reading_cps": 10.17,
+      "timing": "source",
+      "words": [
+        {
+          "text": "Grain,",
+          "start": 16.732,
+          "end": 17.18
+        },
+        {
+          "text": "glow,",
+          "start": 17.386,
+          "end": 18.114
+        },
+        {
+          "text": "sound.",
+          "start": 18.332,
+          "end": 18.6
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "All code. Your videos",
+      "start": 18.986,
+      "end": 20.732,
+      "chars": 21,
+      "reading_cps": 12.03,
+      "timing": "source",
+      "words": [
+        {
+          "text": "All",
+          "start": 18.986,
+          "end": 19.132
+        },
+        {
+          "text": "code.",
+          "start": 19.204,
+          "end": 19.62
+        },
+        {
+          "text": "Your",
+          "start": 20.15,
+          "end": 20.295
+        },
+        {
+          "text": "videos",
+          "start": 20.368,
+          "end": 20.732
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "are great.",
+      "start": 20.804,
+      "end": 21.48,
+      "chars": 10,
+      "reading_cps": 14.8,
+      "timing": "source",
+      "words": [
+        {
+          "text": "are",
+          "start": 20.804,
+          "end": 20.877
+        },
+        {
+          "text": "great.",
+          "start": 21.023,
+          "end": 21.48
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "text": "But the skill",
+      "start": 21.677,
+      "end": 22.259,
+      "chars": 13,
+      "reading_cps": 22.34,
+      "timing": "source",
+      "words": [
+        {
+          "text": "But",
+          "start": 21.677,
+          "end": 21.75
+        },
+        {
+          "text": "the",
+          "start": 21.823,
+          "end": 21.895
+        },
+        {
+          "text": "skill",
+          "start": 21.968,
+          "end": 22.186
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "isn't magic.",
+      "start": 22.259,
+      "end": 23.06,
+      "chars": 12,
+      "reading_cps": 14.98,
+      "timing": "source",
+      "words": [
+        {
+          "text": "isn't",
+          "start": 22.259,
+          "end": 22.477
+        },
+        {
+          "text": "magic.",
+          "start": 22.55,
+          "end": 23.06
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "It's taste,",
+      "start": 23.277,
+      "end": 23.96,
+      "chars": 11,
+      "reading_cps": 16.11,
+      "timing": "source",
+      "words": [
+        {
+          "text": "It's",
+          "start": 23.277,
+          "end": 23.423
+        },
+        {
+          "text": "taste,",
+          "start": 23.495,
+          "end": 23.96
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "text": "written down.",
+      "start": 24.223,
+      "end": 24.823,
+      "chars": 13,
+      "reading_cps": 21.67,
+      "timing": "source",
+      "words": [
+        {
+          "text": "written",
+          "start": 24.223,
+          "end": 24.368
+        },
+        {
+          "text": "down.",
+          "start": 24.514,
+          "end": 24.68
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "So here's the challenge.",
+      "start": 25.168,
+      "end": 26.259,
+      "chars": 24,
+      "reading_cps": 22.0,
+      "timing": "source",
+      "words": [
+        {
+          "text": "So",
+          "start": 25.168,
+          "end": 25.241
+        },
+        {
+          "text": "here's",
+          "start": 25.314,
+          "end": 25.459
+        },
+        {
+          "text": "the",
+          "start": 25.532,
+          "end": 25.582
+        },
+        {
+          "text": "challenge.",
+          "start": 25.604,
+          "end": 26.1
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "Same brief. Your skill,",
+      "start": 26.404,
+      "end": 27.92,
+      "chars": 23,
+      "reading_cps": 15.18,
+      "timing": "source",
+      "words": [
+        {
+          "text": "Same",
+          "start": 26.404,
+          "end": 26.623
+        },
+        {
+          "text": "brief.",
+          "start": 26.804,
+          "end": 27.059
+        },
+        {
+          "text": "Your",
+          "start": 27.35,
+          "end": 27.495
+        },
+        {
+          "text": "skill,",
+          "start": 27.568,
+          "end": 27.92
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "text": "versus the free one.",
+      "start": 28.077,
+      "end": 28.986,
+      "chars": 20,
+      "reading_cps": 22.0,
+      "timing": "source",
+      "words": [
+        {
+          "text": "versus",
+          "start": 28.077,
+          "end": 28.295
+        },
+        {
+          "text": "the",
+          "start": 28.368,
+          "end": 28.441
+        },
+        {
+          "text": "free",
+          "start": 28.514,
+          "end": 28.586
+        },
+        {
+          "text": "one.",
+          "start": 28.659,
+          "end": 28.88
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "Let the comments decide.",
+      "start": 29.241,
+      "end": 30.332,
+      "chars": 24,
+      "reading_cps": 22.0,
+      "timing": "source",
+      "words": [
+        {
+          "text": "Let",
+          "start": 29.241,
+          "end": 29.314
+        },
+        {
+          "text": "the",
+          "start": 29.386,
+          "end": 29.436
+        },
+        {
+          "text": "comments",
+          "start": 29.459,
+          "end": 29.75
+        },
+        {
+          "text": "decide.",
+          "start": 29.823,
+          "end": 30.24
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}
