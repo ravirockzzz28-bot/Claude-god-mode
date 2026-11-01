@@ -1,0 +1,154 @@
+{
+  "role_voices": {
+    "question lands": "slap",
+    "good slams": "hit",
+    "answer lands": "tap",
+    "stanza starts": "slap",
+    "second line lands": "slap",
+    "midnight lands": "glass",
+    "title lands": "boom",
+    "tagline lands": "tap",
+    "pulse": "slap"
+  },
+  "cues": [
+    {
+      "time": 0.04,
+      "voice": "ticks",
+      "count": 11,
+      "spacing": 0.038,
+      "gain": 0.035,
+      "pitch": 2400
+    },
+    {
+      "time": 4.62,
+      "voice": "ticks",
+      "count": 17,
+      "spacing": 0.0238,
+      "gain": 0.035,
+      "pitch": 2400
+    },
+    {
+      "time": 7.12,
+      "voice": "ticks",
+      "count": 15,
+      "spacing": 0.0271,
+      "gain": 0.035,
+      "pitch": 2400
+    },
+    {
+      "time": 8.37,
+      "voice": "ticks",
+      "count": 14,
+      "spacing": 0.0292,
+      "gain": 0.035,
+      "pitch": 2400
+    },
+    {
+      "time": 0.625,
+      "voice": "ticks",
+      "count": 3,
+      "spacing": 0.03,
+      "gain": 0.05,
+      "pitch": 1600
+    },
+    {
+      "time": 1.25,
+      "voice": "ticks",
+      "count": 3,
+      "spacing": 0.03,
+      "gain": 0.05,
+      "pitch": 1600
+    },
+    {
+      "time": 1.875,
+      "voice": "ticks",
+      "count": 3,
+      "spacing": 0.03,
+      "gain": 0.05,
+      "pitch": 1600
+    },
+    {
+      "time": 2.2,
+      "voice": "whoosh",
+      "duration": 0.25,
+      "gain": 0.1
+    },
+    {
+      "time": 4.4,
+      "voice": "whoosh",
+      "duration": 0.25,
+      "gain": 0.08
+    },
+    {
+      "time": 8.9,
+      "voice": "riser",
+      "end": 9.9,
+      "gain": 0.28
+    },
+    {
+      "time": 9.66,
+      "voice": "whoosh",
+      "duration": 0.32,
+      "gain": 0.16
+    },
+    {
+      "time": 10.0,
+      "voice": "hit",
+      "gain": 0.6
+    },
+    {
+      "time": 10.0,
+      "voice": "shimmer",
+      "duration": 2.2,
+      "gain": 0.045
+    },
+    {
+      "voice": "bed",
+      "levels": [
+        [
+          0,
+          0.1
+        ],
+        [
+          5,
+          0.14
+        ],
+        [
+          9.6,
+          0.24
+        ],
+        [
+          9.9,
+          0.06
+        ],
+        [
+          10,
+          0.32
+        ],
+        [
+          12.5,
+          0.22
+        ],
+        [
+          15,
+          0
+        ]
+      ],
+      "rise_from": 8.6,
+      "rise_length": 1.4
+    },
+    {
+      "voice": "room",
+      "seconds": 2.0,
+      "decay": 0.45,
+      "wet": 0.35
+    },
+    {
+      "voice": "music",
+      "file": "assets/static.wav",
+      "gain_db": -12,
+      "bpm": 96,
+      "duck_db": -4
+    }
+  ]
+}

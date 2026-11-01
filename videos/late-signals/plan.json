@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_frames": 450,
+  "mode": "kinetic",
+  "audio": "required",
+  "safe_area": {
+    "x": 80,
+    "y": 220,
+    "width": 850,
+    "height": 1220
+  },
+  "hits": [
+    {
+      "time": 0.42,
+      "amplitude": 0.6,
+      "role": "question lands"
+    },
+    {
+      "time": 2.5,
+      "amplitude": 1.0,
+      "role": "good slams"
+    },
+    {
+      "time": 3.75,
+      "amplitude": 0.5,
+      "role": "answer lands"
+    },
+    {
+      "time": 5.0,
+      "amplitude": 0.7,
+      "role": "stanza starts"
+    },
+    {
+      "time": 7.5,
+      "amplitude": 0.6,
+      "role": "second line lands"
+    },
+    {
+      "time": 8.75,
+      "amplitude": 0.9,
+      "role": "midnight lands"
+    },
+    {
+      "time": 10.0,
+      "amplitude": 1.6,
+      "role": "title lands"
+    },
+    {
+      "time": 10.625,
+      "amplitude": 0.45,
+      "role": "pulse"
+    },
+    {
+      "time": 11.25,
+      "amplitude": 0.45,
+      "role": "pulse"
+    },
+    {
+      "time": 11.875,
+      "amplitude": 0.45,
+      "role": "pulse"
+    },
+    {
+      "time": 12.5,
+      "amplitude": 0.6,
+      "role": "tagline lands"
+    },
+    {
+      "time": 13.125,
+      "amplitude": 0.45,
+      "role": "pulse"
+    },
+    {
+      "time": 13.75,
+      "amplitude": 0.45,
+      "role": "pulse"
+    },
+    {
+      "time": 14.375,
+      "amplitude": 0.45,
+      "role": "pulse"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "start_frame": 0,
+      "end_frame": 75,
+      "intent": "stop the scroll with a question to a night-time viewer",
+      "action": "\"Still awake?\" decodes out of orange signal noise above a flat orange trace that is already searching",
+      "text": "Still awake?",
+      "transition": {
+        "kind": "cut",
+        "carrier": "the trace kicks once"
+      }
+    },
+    {
+      "id": "answer",
+      "start_frame": 75,
+      "end_frame": 150,
+      "intent": "make it personal and a little funny",
+      "action": "\"Good.\" slams in on the kick; \"So are we.\" answers in italic",
+      "text": "Good. So are we.",
+      "transition": {
+        "kind": "cut",
+        "carrier": "the trace starts to carry a waveform"
+      }
+    },
+    {
+      "id": "stanza",
+      "start_frame": 150,
+      "end_frame": 300,
+      "intent": "say what the show is about",
+      "action": "three lines decode one by one while the waveform grows; midnight lands in orange",
+      "text": "Some conversations / only come through / after midnight.",
+      "transition": {
+        "kind": "camera",
+        "carrier": "the waveform surges and collapses into the title underline"
+      }
+    },
+    {
+      "id": "title",
+      "start_frame": 300,
+      "end_frame": 450,
+      "intent": "name the show and invite",
+      "action": "LATE SIGNALS lands with a push-through; the trace becomes its underline and pulses on the beat; tagline answers",
+      "text": "LATE SIGNALS / A podcast. Tune in.",
+      "transition": {
+        "kind": "end",
+        "carrier": ""
+      }
+    }
+  ],
+  "format": "reel",
+  "concept": "a faint orange signal in the dark finds the viewer at night, gets stronger line by line, and locks into the show's name: the late hours are where the good talk is",
+  "recurring_element": "one orange signal line (an oscilloscope trace) that is flat, pulses, carries every transition and finally becomes the underline of the title",
+  "banned": [
+    {
+      "avoid": "holds over 0.5 s where nothing changes",
+      "instead": "a reading hold keeps the text still and moves what surrounds it"
+    },
+    {
+      "avoid": "crossfades",
+      "instead": "every scene grows out of the previous one through the recurring element"
+    },
+    {
+      "avoid": "glows with no source",
+      "instead": "light only where something on screen emits it"
+    },
+    {
+      "avoid": "particle bursts",
+      "instead": "motion starts from or ends in an element already on screen"
+    },
+    {
+      "avoid": "bouncy easing on everything",
+      "instead": "overshoot only on the hero landing"
+    },
+    {
+      "avoid": "corner labels and HUD text",
+      "instead": "text only when it says something"
+    },
+    {
+      "avoid": "anything that looks like a template",
+      "instead": "if a default appears, replace it with a decision"
+    }
+  ],
+  "audience": "night-time scrollers in bed or on a late commute who like long, honest conversations",
+  "loop": false,
+  "bpm": 96,
+  "meter": 4,
+  "palette": {
+    "bg": "#0b0908",
+    "ink": "#ece4d8",
+    "accent": "#ff6a1a"
+  }
+}

@@ -1,0 +1,226 @@
+# Changelog
+
+## 1.10.0 · 2026-10-29
+
+Talking-head edits, right in version one.
+
+- **`references/edit/talking-head.md`**: editing a recording of someone talking to camera into a short with inserts.
+  Load the whole HyperFrames toolchain at once, ask once, a twelve-step pipeline with its check per step (breath
+  around sentences, mono voice, gaze on every frame, eyes open at the seams, the last word measured in the waveform,
+  one render, the mix from stems, the final file verified), the first three seconds, one finish for every B-roll
+  insert with twelve methods, and what makes a dense edit feel robotic. Written from a reel that took ten versions.
+- **`scripts/gaze_check.py`**: eyes down, blinks and sideways looks on every frame with the MediaPipe Face Landmarker
+  (optional dependency; the model file is never downloaded by the script), runs of blinks told apart from looking
+  down, head pitch relative to each take, and a summary with the down runs and any blink in the first second.
+- **`scripts/print_footage.py`**: a two-ink screen print with frame-rate lag for clips and photos (halftone fixed to
+  the screen, misregistration that boils on twos and jumps on keywords, paper, footage on twos), numpy and FFmpeg only,
+  one print per step written twice.
+- Two speed-change traps documented: a per-channel stretch of a mixed stereo file decorrelates the voice; `-ac 1`
+  sums the channels and clips.
+- Routing: a **Talking head** mode in the SKILL, four index rows, the tools table.
+
+## 1.9.0 · 2026-10-27
+
+Moving holds, layer effects and motion styles.
+
+- **Moving holds by default** (`kit/comp.js`): every layer keeps a residual drift once its last key lands (a few px of
+  noise, tenths of a degree, a very slow growth, eased in over 0.6 s), and every scene in a sequence breathes (a slow
+  push of a few percent and a sway), so no stretch freezes, the ending included. `drift: false` and
+  `breathe: false` switch them off.
+- **`scripts/hold_check.py`**: finds the dead holds of a video by edge speed (how far the edges move between frames,
+  in px; film grain does not move edges) and draws the curve. On the previous collage it found 3.5 s frozen at 0.00
+  px/frame (the card hold and the last two seconds); the new one has none, its quietest stretch at 0.18.
+- The scene's slow push eases in and then keeps its speed to the last frame (no ease-out that freezes the end), and
+  each scene is overscanned from its sway and tilt so no edge of the frame ever shows.
+- **Layer effects**: glow, shadow, echo, rgbSplit, tint, fill, lightSweep, posterize (`layer({effects})`).
+- **Motion styles**: `Comp.style('editorial' | 'punchy' | 'calm' | 'sober')` sets eases, offsets, overshoot, drift,
+  breathing and transition durations for a whole piece.
+- `editorial-collage`: the keyword splits its channels as the camera accelerates into it, the card's title gets a light
+  sweep, the closing keyword a glow; no frozen stretch.
+- Motion Architect checked end to end on Windows (vision engine, design engine, studio stills and video).
+- Guides: living layer §3b (moving holds), keyframes & cuts §4b (effects) and §4c (styles).
+
+## 1.8.0 · 2026-10-27
+
+Keyframes and cuts like After Effects.
+
+- **`kit/comp.js`**: the AE composition model in code. Layers with anchor, position, scale, rotation and opacity on
+  keyframes with named graph-editor eases (`snap` 12/88, `punch` 5/95, `swift` 40/85, `glide`, `accel`, `whip`, `hold`,
+  or any influences), overshoot keys, parenting, precomps with time remapping, masks and track mattes, a 2.5D camera
+  with perspective and a keyable rack focus, and `sequence()`: scenes as precomps that overlap at transitions (whip,
+  push, zoom through, iris, slice, spin, cut, flash). Every layer reports its motion, so the stage's motion blur
+  follows it without a hand-written track. Shipped with every piece.
+- **Transitions swap, they do not dissolve**: zoom through accelerates into a point until it fills the frame and hands
+  over under a two-frame flash to a scene that settles from 160 %; spin swaps on the half; push keeps the outgoing
+  scene opaque. A test refuses any transition that shows two half-transparent scenes.
+- **`editorial-collage` rebuilt with it**: four precomps, a 2.5D camera that racks focus from the figure to the phrase,
+  words as layers 3 frames apart landing on overshoot keys, a card whose title, rule and items are its children, a
+  phone whose notifications are its children, a real zoom through the keyword with radial motion blur.
+- Guide `references/craft/keyframes-and-cuts.md`: the model, the eases and their speed graphs, offsets in frames,
+  how scenes hand over, camera, checks.
+- **Determinism kept**: offscreen canvases (precomps, depth-of-field levels, the B-roll film) are CPU-rastered like the
+  stage's layers, and every layer draws from a clean state (letterSpacing and kerning included, which some browsers do
+  not restore): the determinism check had caught the same instant drawing differently after other seeks.
+
+## 1.7.0 · 2026-10-27
+
+The editorial-collage language of After Effects, and Motion Architect as a companion.
+
+- **`kit/collage.js`**: the devices of documentary and editorial motion graphics, studied against five reference
+  reels: paper with matter (blotches, grain, fibres, edges, seeded), mixed-weight phrases (`~small`, `*keyword*` or
+  `*several words*` in the accent), monumental figures out of focus, printed pages in macro with real justified text,
+  smooth depth of field (pre-blurred levels faded by distance from the focus line, no bands) and a highlighter that
+  sweeps the one line that matters, ribbons and trim paths, pinned cards, phones with stacking notifications, cut-out
+  objects with contact shadows, type on a curve. Shipped with every piece.
+- **Recipe `editorial-collage`**: a figure behind a mixed phrase, a zoom through the red keyword into a macro page,
+  a pull back to the headline, a whip to a ribbon and a pinned card, a cut to black with a phone and a glowing ending.
+  Every transition has a carrier; deterministic.
+- **`broll-story` redesigned**: clips and photos land as prints (white border, tape, shadow, a slight turn) that stack
+  on paper; the voice's phrase sets itself in mixed weights (function words small, the stressed word red with a stroke).
+- **Companion: Motion Architect** (Enrique Rocha, MIT) in `companions/motion-architect`: its vision engine to study
+  reference videos, its design engine to search palettes and type pairings, its CC0 UI sounds, and the whole Remotion
+  agent when a piece should be built in React (`companions/README.md`).
+- Guide `references/create/editorial-collage.md`: why pieces look generic and the device that fixes each cause.
+
+## 1.6.0 · 2026-10-26
+
+Recipes for niches.
+
+- **Four data-driven recipes**: `chart-bars` (data, finance: bars from zero, values counting, the highlight in the
+  accent, the source on screen, numbers read from the frame so they stay sharp under motion blur), `ranking` (lists:
+  a countdown with outline numbers that fill, a vertical whip with real blur, countdown dots), `step-diagram`
+  (education, psychology: a process that builds and never resets, a loop laid out as a circle with labels outward),
+  `audiogram` (podcasts, yapping: a waveform from the voice's level, karaoke captions, a live dot).
+- `new_piece.py` copies a recipe's sample `data.json` and links it as `plan.data`; `voice_plan.py` writes the voice's
+  level per frame into `voice.json` (`levels`).
+- Guide `references/create/niches.md`: hook, structure, proof, banned list and the recipe to start from, per niche.
+- Thirteen recipes in all.
+
+## 1.5.0 · 2026-10-26
+
+B-roll: real pictures with their licence, under one grade.
+
+- **`scripts/broll.py`**: `ingest` copies clips and photos into the piece and records source, licence, author, sha256
+  and AI origin in `provenance.json` (no licence, no entry; CC BY needs an author); `shotlist` writes one shot per
+  scene, alternating still moves; `assemble` conforms each clip to its scene (fps, cover crop around a focus point,
+  one JPEG per frame, a short clip holds and says so), prepares stills and cut-outs, writes `timeline.json` and links
+  it from the plan; `credits` writes the attribution lines.
+- **`kit/footage.js`**: clips and stills drawn inside a piece: Ken Burns in code (sub-pixel, real motion blur),
+  parallax with a cut-out, one grade for every source (contrast, saturation, warmth, lift). Shipped with every piece.
+- **Stage**: an optional async `prepare(t)` hook loads what a frame needs before it is drawn; `seek` awaits it.
+- **Recipe `broll-story`**: footage under a voice, lower-third captions with a gradient, a shadow and an accent box.
+- **Cut frames**: `voice-captions` and `broll-story` choose the scene from the frame, not the motion-blur sub-sample,
+  so no ghost of the previous phrase shows on a cut frame (found in the dense review of the test piece).
+- **Exact cadence on joins**: `render_parallel.mjs` and `hook_variants.py` re-stamp the joined stream with `setts`
+  (decode time N/fps, B-frame offsets kept): the MP4 concat demuxer alone left 30.001 fps and a wobbling cadence that
+  `verify_export.py --require-cfr` caught on a 10-chunk render. Chunks are keyed by fingerprint only, so another
+  output name reuses them.
+- Guide `references/edit/broll.md`.
+
+## 1.4.0 · 2026-10-26
+
+Hook variants for trial reels.
+
+- **`scripts/hook_variants.py`**: `init` writes `variants.json` from the brief's `hooks:` and `seam:` (the piece itself
+  is the control); `render` makes one folder per variant (its TITLE and hit times), proves to the pixel that every
+  variant matches the piece at the seam (refuses one that does not), renders each opening alone and the body once,
+  builds one soundtrack per variant, joins them without re-encoding and leaves `final/hooks/hooks.md`, a results
+  table for the 3-second skip rate and the average watch time.
+- `brief.py` reads `hooks:` (two to four, all different) and `seam:`.
+- Motion brief §8 and pacing §2 on testing the hook instead of guessing.
+
+## 1.3.0 · 2026-10-26
+
+Long pieces render in parallel chunks that resume.
+
+- **`scripts/render_parallel.mjs`**: chunks of about three per worker render at once, each in its own browser; a
+  failed chunk is retried twice; an interrupted render resumes from its finished chunks (fingerprinted on every file of
+  the piece and the encoder settings, so a changed piece never reuses them); chunks join without re-encoding, audio
+  over the whole, frame count checked. Measured: a 18.7 s voice-over at 1080×1920 / 30 fps went from 13.0 to 6.0
+  minutes with three workers.
+- `render_stream.mjs --frames a:b` (an exact frame range) and `--report <file>`.
+- Pipeline guide §3b.
+
+## 1.2.0 · 2026-10-26
+
+The voice is the clock: pieces told by a voice.
+
+- **`scripts/voice_plan.py`**: a voice and its word timings (ElevenLabs speech-to-text, Whisper, a list of onsets,
+  WebVTT, SRT, or the script alone aligned to the voice's pauses) become the plan: one scene per phrase (split only at
+  a comma or a real pause), cuts two frames before each phrase, one accent per phrase (the last content word unless the
+  voice or a `*mark*` in the script says otherwise), balanced captions, `voice.json` for the piece and the
+  `voiceover` cue. Stops when the timings belong to another take; tightens word ends so pauses come back; restores the
+  script's punctuation; takes each scene's action from the brief's voice | screen table.
+- **Mix**: a `voiceover` cue puts the voice on top, dry, and ducks everything else under its own envelope; the report
+  gives `voice_over_bed_db` and warns under 10 dB. A soft `tap` voice for accents under speech (`emphasis` hits).
+  The master now lowers the gain of dense material that is too loud even unsaturated, instead of failing.
+- **Captions**: `captions.py --preset voice` (22 characters per second, the ear carries the pace) and balanced lines
+  that never end on a weak word or leave one short word alone.
+- **Recipe `voice-captions`**: each phrase a scene, words land as they are said, the stressed word in the accent with
+  an underline sweep, paper and ink swap on every cut; reads `voice.json`, or spreads its title as a demo voice.
+- **Brief `voiceover`**: a two-column script (voice | screen); `brief.py check` estimates the spoken length at 2.5
+  words per second and flags rows with no picture.
+- **Review per phrase**: `sample_frames.mjs --cuts` (both sides of every cut) and `--scenes` (one frame per phrase).
+- **Delivery weight**: `render_stream.mjs` reports `size_mb` and `video_mbps` and warns above 40 Mbit/s (grain at CRF 14
+  ran to 73 Mbit/s in a test; CRF 20 gave 1.8). `audio_check.py` no longer asks for an impact on voice accents.
+- Guide `references/edit/voiceover.md`.
+
+## 1.1.0 · 2026-10-26
+
+The motion brief: decide the piece before the code.
+
+- **Brief in six blocks** (`references/create/motion-brief.md`): `<inputs>`, `<direction>`, `<structure>`,
+  `<build>`, `<gotchas>`, `<start>`, the structure of the strongest prompts in the Prompt Motion gallery, mapped to
+  Motionsmith. One concept, a recurring element, a banned list written as `avoid -> instead`, a tempo and a bar count
+  that add up, the ending, the loop decision. SKILL step 1 now writes it; a one-line request gets rewritten into it.
+- **Five brief templates** (`templates/briefs/`): vertical reel with a hook, showreel (15 s, 120 BPM, 7.5 bars),
+  launch, explainer (audience and a facts line: research, never invent) and seamless loop. Each is also a portable
+  prompt.
+- **`scripts/brief.py`**: `list`, `new` (from a template with `--set`), `check` (missing blocks and decisions,
+  unfilled placeholders, bans without alternatives, bar arithmetic, explainer facts), `grid` (every beat's time and
+  frame) and `plan` (concept, bans, tempo, meter, loop into plan.json; bar or beat hits added beside the recipe's
+  named hits, and off-grid hits listed). English and Spanish keys.
+- **AI tells**: the banned list doubles as the art director's checklist (glows without a source, bursts from nowhere,
+  crossfades, bounce on everything, corner text, generic gradients, stock UI, `Math.random`).
+- **Review per beat**: `sample_frames.mjs --beats`, `--bars`, `--hits` and `--beat-offset` read the plan's grid; the
+  review protocol looks at the grid first.
+- **`scripts/loop_check.py`**: a loop's seam measured on the MP4: pose (seam step against ordinary steps) and speed
+  (pace at both ends), and the repeated-first-frame stutter.
+- **Plan**: optional `concept`, `recurring_element`, `banned`, `meter`, `loop`, `audience`; `validate_plan.py
+  --require-brief`.
+- Explainers gain the sequence, audience and facts rules; loops the seam rules.
+
+## 1.0.0 · 2026-10-24
+
+First public release.
+
+- **Guides**: 34 guides in four areas. Create (ideation, style atlas of 24 looks, 15 scene blueprints, art
+  direction, reference study), Edit (cutting, pacing and retention, transitions atlas, story structures, music
+  editing, colour grade, captions and titles, formats and platforms), Craft (15 guides from principles to sound
+  design) and Produce (pipeline, review protocol with three critics, rubric, overlays, plan schema, delivery).
+- **Kit**: `motion-math.js`, `postfx-glsl.js`, and new `timeline.js` (keyframes with After Effects influence),
+  `kinetic-type.js` (cascades, face cycling, glitch, echoes, typewriter, marquee, karaoke) and `stage.js` (shared
+  render plumbing: capture contract, motion blur from tracked points, HDR bloom, tone map, text fitting that breaks
+  on phrases, portable font stacks, and a GPU-free environment for tests).
+- **Recipes**: logo reveal (minimal glow), kinetic quote (typographic poster), title card (Swiss), data reveal
+  (infographic), lower third (broadcast) and split compare (duotone), runnable in five formats, with readable sizes
+  (48 px floor at 1080) and holds that stay alive. `new_piece.py --recipe` and `--format reel|story|portrait|square|landscape`.
+- **Sound**: `scripts/sfx/` synthesis library and `build_soundtrack.py` from the plan's hits.
+- **Tools**: `captions.py`, `make_gif.py`, plus the existing capture, render, verification and audio tools.
+- **Taste profiles**: project (`MOTIONSMITH.md`) and personal (`profiles/personal/`, never committed).
+- **Install**: `install.py --claude --codex`; never overwrites or deletes personal profiles, refuses a folder that
+  is not a Motionsmith install, `--check` lists every file it would touch.
+- **Review before release**: three critics (engineer, art director and editor, first-time user) checked the code, the
+  guides and the recipes; every confirmed finding was fixed and is covered by a test. A second, adversarial audit
+  followed (attack surface, failure scenarios, other agents).
+- **HyperFrames**: `new_piece.py --hyperframes` and `scripts/hyperframes.py sync` make a piece a HyperFrames project
+  (passes `hyperframes lint` and `check`, renders with `hyperframes render`, same frames as `render_stream`);
+  `hyperframes.py clip` hands a rendered piece to a HyperFrames film; guide `references/produce/hyperframes.md`.
+- **Type**: a font kit (Archivo with variable weight and width, Fraunces, JetBrains Mono; SIL OFL) in every piece;
+  weight landings and width slams in the recipes; `Stage.font()`; balanced line breaks that follow phrases.
+- **Finish**: `Stage.looks.print` (screen print with a misregistration kick on the hits) and `Stage.looks.crt`.
+- **Seventh recipe**: promo sequence (hook slam, whip pan with real motion blur, iris, end card).
+- **Hardening**: captures cannot reach the internet; the local server refuses symlinks out of the piece and foreign
+  Host headers; drafts with `MOTION_MAX_SAMPLES`; an opt-in 8-bit fallback; pieces are never created inside the skill;
+  `install.py` refuses folders that are not a Motionsmith install.
+- **Agents**: `install.py --antigravity`, `--gemini`, `--workspace` and `--all`, besides `--claude` and `--codex`.
