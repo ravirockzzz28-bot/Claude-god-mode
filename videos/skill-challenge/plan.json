@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_frames": 930,
+  "mode": "kinetic",
+  "audio": "required",
+  "safe_area": {
+    "x": 80,
+    "y": 220,
+    "width": 850,
+    "height": 1220
+  },
+  "hits": [
+    {
+      "time": 0.332,
+      "amplitude": 0.6,
+      "role": "emphasis: miftahul"
+    },
+    {
+      "time": 2.623,
+      "amplitude": 0.6,
+      "role": "emphasis: prompt"
+    },
+    {
+      "time": 3.714,
+      "amplitude": 0.6,
+      "role": "emphasis: skill"
+    },
+    {
+      "time": 5.714,
+      "amplitude": 0.6,
+      "role": "emphasis: test"
+    },
+    {
+      "time": 6.55,
+      "amplitude": 0.6,
+      "role": "emphasis: subscription"
+    },
+    {
+      "time": 7.568,
+      "amplitude": 0.6,
+      "role": "emphasis: paywall"
+    },
+    {
+      "time": 8.441,
+      "amplitude": 0.6,
+      "role": "emphasis: secret"
+    },
+    {
+      "time": 10.95,
+      "amplitude": 0.6,
+      "role": "emphasis: open-source"
+    },
+    {
+      "time": 13.896,
+      "amplitude": 0.6,
+      "role": "emphasis: made"
+    },
+    {
+      "time": 15.932,
+      "amplitude": 0.6,
+      "role": "emphasis: teaser"
+    },
+    {
+      "time": 19.204,
+      "amplitude": 0.6,
+      "role": "emphasis: code"
+    },
+    {
+      "time": 21.023,
+      "amplitude": 0.6,
+      "role": "emphasis: great"
+    },
+    {
+      "time": 22.55,
+      "amplitude": 0.6,
+      "role": "emphasis: magic"
+    },
+    {
+      "time": 23.495,
+      "amplitude": 0.6,
+      "role": "emphasis: taste"
+    },
+    {
+      "time": 25.604,
+      "amplitude": 0.6,
+      "role": "emphasis: challenge"
+    },
+    {
+      "time": 26.804,
+      "amplitude": 0.6,
+      "role": "emphasis: brief"
+    },
+    {
+      "time": 28.514,
+      "amplitude": 0.6,
+      "role": "emphasis: free"
+    },
+    {
+      "time": 29.459,
+      "amplitude": 0.6,
+      "role": "emphasis: comments"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01-hello",
+      "start_frame": 0,
+      "end_frame": 37,
+      "intent": "hello",
+      "action": "picture: hello",
+      "text": "Hey Miftahul.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s02-prompt",
+      "start_frame": 37,
+      "end_frame": 98,
+      "intent": "prompt",
+      "action": "picture: prompt",
+      "text": "You said the secret isn't the prompt.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s03-skill",
+      "start_frame": 98,
+      "end_frame": 140,
+      "intent": "skill",
+      "action": "picture: skill",
+      "text": "It's your skill file.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s04-test",
+      "start_frame": 140,
+      "end_frame": 190,
+      "intent": "test",
+      "action": "picture: test",
+      "text": "So we ran a test.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s05-list",
+      "start_frame": 190,
+      "end_frame": 282,
+      "intent": "list",
+      "action": "picture: list",
+      "text": "No subscription. No paywall. No secret file.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s06-terminal",
+      "start_frame": 282,
+      "end_frame": 395,
+      "intent": "terminal",
+      "action": "picture: terminal",
+      "text": "Just Claude, and a free, open-source skill anyone can install.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s07-phone",
+      "start_frame": 395,
+      "end_frame": 432,
+      "intent": "phone",
+      "action": "picture: phone",
+      "text": "This is what it made.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s08-teaser",
+      "start_frame": 432,
+      "end_frame": 568,
+      "intent": "teaser",
+      "action": "picture: teaser",
+      "text": "A fifteen-second podcast teaser. Grain, glow, sound.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s09-code",
+      "start_frame": 568,
+      "end_frame": 602,
+      "intent": "code",
+      "action": "picture: code",
+      "text": "All code.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s10-great",
+      "start_frame": 602,
+      "end_frame": 648,
+      "intent": "great",
+      "action": "picture: great",
+      "text": "Your videos are great.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s11-magic",
+      "start_frame": 648,
+      "end_frame": 696,
+      "intent": "magic",
+      "action": "picture: magic",
+      "text": "But the skill isn't magic.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s12-taste",
+      "start_frame": 696,
+      "end_frame": 753,
+      "intent": "taste",
+      "action": "picture: taste",
+      "text": "It's taste, written down.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s13-challenge",
+      "start_frame": 753,
+      "end_frame": 790,
+      "intent": "challenge",
+      "action": "picture: challenge",
+      "text": "So here's the challenge.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s14-brief",
+      "start_frame": 790,
+      "end_frame": 818,
+      "intent": "brief",
+      "action": "picture: brief",
+      "text": "Same brief.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s15-versus",
+      "start_frame": 818,
+      "end_frame": 875,
+      "intent": "versus",
+      "action": "picture: versus",
+      "text": "Your skill, versus the free one.",
+      "transition": {
+        "kind": "cut",
+        "carrier": ""
+      }
+    },
+    {
+      "id": "s16-comments",
+      "start_frame": 875,
+      "end_frame": 930,
+      "intent": "comments",
+      "action": "picture: comments",
+      "text": "Let the comments decide.",
+      "transition": {
+        "kind": "end",
+        "carrier": ""
+      }
+    }
+  ],
+  "format": "reel",
+  "cuts": [
+    3.2667,
+    4.6667,
+    6.3333,
+    7.3,
+    9.4,
+    13.1667,
+    14.4,
+    16.6667,
+    18.9333,
+    21.6,
+    23.2,
+    25.1,
+    26.3333,
+    29.1667
+  ],
+  "captions": "captions.json",
+  "voice": {
+    "file": "assets/voice.wav",
+    "start": 0.15,
+    "timing": "measured",
+    "words": "voice.json"
+  }
+}

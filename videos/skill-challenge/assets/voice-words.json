@@ -1,0 +1,473 @@
+{
+ "source": "ElevenLabs speech-to-text (scribe_v1) on take A, times scaled by 1/1.1 for atempo=1.1",
+ "words": [
+  {
+   "text": "Hey",
+   "type": "word",
+   "start": 0.0,
+   "end": 0.1455
+  },
+  {
+   "text": "Miftahul.",
+   "type": "word",
+   "start": 0.1818,
+   "end": 0.7273
+  },
+  {
+   "text": "You",
+   "type": "word",
+   "start": 1.1636,
+   "end": 1.2364
+  },
+  {
+   "text": "said",
+   "type": "word",
+   "start": 1.3091,
+   "end": 1.3818
+  },
+  {
+   "text": "the",
+   "type": "word",
+   "start": 1.4545,
+   "end": 1.5273
+  },
+  {
+   "text": "secret",
+   "type": "word",
+   "start": 1.6,
+   "end": 1.9636
+  },
+  {
+   "text": "isn't",
+   "type": "word",
+   "start": 2.0364,
+   "end": 2.2545
+  },
+  {
+   "text": "the",
+   "type": "word",
+   "start": 2.2909,
+   "end": 2.3273
+  },
+  {
+   "text": "prompt.",
+   "type": "word",
+   "start": 2.4727,
+   "end": 2.9091
+  },
+  {
+   "text": "It's",
+   "type": "word",
+   "start": 3.2,
+   "end": 3.3455
+  },
+  {
+   "text": "your",
+   "type": "word",
+   "start": 3.4182,
+   "end": 3.4909
+  },
+  {
+   "text": "skill",
+   "type": "word",
+   "start": 3.5636,
+   "end": 3.7818
+  },
+  {
+   "text": "file.",
+   "type": "word",
+   "start": 3.8545,
+   "end": 4.3636
+  },
+  {
+   "text": "So",
+   "type": "word",
+   "start": 4.5818,
+   "end": 4.8
+  },
+  {
+   "text": "we",
+   "type": "word",
+   "start": 5.0182,
+   "end": 5.1636
+  },
+  {
+   "text": "ran",
+   "type": "word",
+   "start": 5.2364,
+   "end": 5.3091
+  },
+  {
+   "text": "a",
+   "type": "word",
+   "start": 5.3455,
+   "end": 5.3818
+  },
+  {
+   "text": "test.",
+   "type": "word",
+   "start": 5.5636,
+   "end": 6.0
+  },
+  {
+   "text": "No",
+   "type": "word",
+   "start": 6.2545,
+   "end": 6.3273
+  },
+  {
+   "text": "subscription.",
+   "type": "word",
+   "start": 6.4,
+   "end": 7.0909
+  },
+  {
+   "text": "No",
+   "type": "word",
+   "start": 7.2,
+   "end": 7.2727
+  },
+  {
+   "text": "paywall.",
+   "type": "word",
+   "start": 7.4182,
+   "end": 7.9636
+  },
+  {
+   "text": "No",
+   "type": "word",
+   "start": 8.0727,
+   "end": 8.2182
+  },
+  {
+   "text": "secret",
+   "type": "word",
+   "start": 8.2909,
+   "end": 8.5818
+  },
+  {
+   "text": "file.",
+   "type": "word",
+   "start": 8.6545,
+   "end": 8.9455
+  },
+  {
+   "text": "Just",
+   "type": "word",
+   "start": 9.3091,
+   "end": 9.4545
+  },
+  {
+   "text": "Claude,",
+   "type": "word",
+   "start": 9.5273,
+   "end": 10.0364
+  },
+  {
+   "text": "and",
+   "type": "word",
+   "start": 10.0727,
+   "end": 10.1091
+  },
+  {
+   "text": "a",
+   "type": "word",
+   "start": 10.1818,
+   "end": 10.2545
+  },
+  {
+   "text": "free,",
+   "type": "word",
+   "start": 10.3273,
+   "end": 10.6909
+  },
+  {
+   "text": "open-source",
+   "type": "word",
+   "start": 10.8,
+   "end": 11.2
+  },
+  {
+   "text": "skill",
+   "type": "word",
+   "start": 11.3455,
+   "end": 11.4909
+  },
+  {
+   "text": "anyone",
+   "type": "word",
+   "start": 11.6364,
+   "end": 11.9273
+  },
+  {
+   "text": "can",
+   "type": "word",
+   "start": 12.0,
+   "end": 12.0727
+  },
+  {
+   "text": "install.",
+   "type": "word",
+   "start": 12.1455,
+   "end": 12.5818
+  },
+  {
+   "text": "This",
+   "type": "word",
+   "start": 13.0909,
+   "end": 13.3091
+  },
+  {
+   "text": "is",
+   "type": "word",
+   "start": 13.3818,
+   "end": 13.4545
+  },
+  {
+   "text": "what",
+   "type": "word",
+   "start": 13.5273,
+   "end": 13.6
+  },
+  {
+   "text": "it",
+   "type": "word",
+   "start": 13.6364,
+   "end": 13.6727
+  },
+  {
+   "text": "made.",
+   "type": "word",
+   "start": 13.7455,
+   "end": 14.0364
+  },
+  {
+   "text": "A",
+   "type": "word",
+   "start": 14.3273,
+   "end": 14.4
+  },
+  {
+   "text": "fifteen-second",
+   "type": "word",
+   "start": 14.5455,
+   "end": 15.2
+  },
+  {
+   "text": "podcast",
+   "type": "word",
+   "start": 15.2727,
+   "end": 15.7091
+  },
+  {
+   "text": "teaser.",
+   "type": "word",
+   "start": 15.7818,
+   "end": 16.1455
+  },
+  {
+   "text": "Grain,",
+   "type": "word",
+   "start": 16.5818,
+   "end": 17.1636
+  },
+  {
+   "text": "glow,",
+   "type": "word",
+   "start": 17.2364,
+   "end": 17.9636
+  },
+  {
+   "text": "sound.",
+   "type": "word",
+   "start": 18.1818,
+   "end": 18.6182
+  },
+  {
+   "text": "All",
+   "type": "word",
+   "start": 18.8364,
+   "end": 18.9818
+  },
+  {
+   "text": "code.",
+   "type": "word",
+   "start": 19.0545,
+   "end": 19.7091
+  },
+  {
+   "text": "Your",
+   "type": "word",
+   "start": 20.0,
+   "end": 20.1455
+  },
+  {
+   "text": "videos",
+   "type": "word",
+   "start": 20.2182,
+   "end": 20.5818
+  },
+  {
+   "text": "are",
+   "type": "word",
+   "start": 20.6545,
+   "end": 20.7273
+  },
+  {
+   "text": "great.",
+   "type": "word",
+   "start": 20.8727,
+   "end": 21.3818
+  },
+  {
+   "text": "But",
+   "type": "word",
+   "start": 21.5273,
+   "end": 21.6
+  },
+  {
+   "text": "the",
+   "type": "word",
+   "start": 21.6727,
+   "end": 21.7455
+  },
+  {
+   "text": "skill",
+   "type": "word",
+   "start": 21.8182,
+   "end": 22.0364
+  },
+  {
+   "text": "isn't",
+   "type": "word",
+   "start": 22.1091,
+   "end": 22.3273
+  },
+  {
+   "text": "magic.",
+   "type": "word",
+   "start": 22.4,
+   "end": 22.9818
+  },
+  {
+   "text": "It's",
+   "type": "word",
+   "start": 23.1273,
+   "end": 23.2727
+  },
+  {
+   "text": "taste,",
+   "type": "word",
+   "start": 23.3455,
+   "end": 23.9273
+  },
+  {
+   "text": "written",
+   "type": "word",
+   "start": 24.0727,
+   "end": 24.2182
+  },
+  {
+   "text": "down.",
+   "type": "word",
+   "start": 24.3636,
+   "end": 24.5818
+  },
+  {
+   "text": "So",
+   "type": "word",
+   "start": 25.0182,
+   "end": 25.0909
+  },
+  {
+   "text": "here's",
+   "type": "word",
+   "start": 25.1636,
+   "end": 25.3091
+  },
+  {
+   "text": "the",
+   "type": "word",
+   "start": 25.3818,
+   "end": 25.4182
+  },
+  {
+   "text": "challenge.",
+   "type": "word",
+   "start": 25.4545,
+   "end": 26.0727
+  },
+  {
+   "text": "Same",
+   "type": "word",
+   "start": 26.2545,
+   "end": 26.4727
+  },
+  {
+   "text": "brief.",
+   "type": "word",
+   "start": 26.6545,
+   "end": 26.9091
+  },
+  {
+   "text": "Your",
+   "type": "word",
+   "start": 27.2,
+   "end": 27.3455
+  },
+  {
+   "text": "skill,",
+   "type": "word",
+   "start": 27.4182,
+   "end": 27.8182
+  },
+  {
+   "text": "versus",
+   "type": "word",
+   "start": 27.9273,
+   "end": 28.1455
+  },
+  {
+   "text": "the",
+   "type": "word",
+   "start": 28.2182,
+   "end": 28.2909
+  },
+  {
+   "text": "free",
+   "type": "word",
+   "start": 28.3636,
+   "end": 28.4364
+  },
+  {
+   "text": "one.",
+   "type": "word",
+   "start": 28.5091,
+   "end": 28.9091
+  },
+  {
+   "text": "Let",
+   "type": "word",
+   "start": 29.0909,
+   "end": 29.1636
+  },
+  {
+   "text": "the",
+   "type": "word",
+   "start": 29.2364,
+   "end": 29.2727
+  },
+  {
+   "text": "comments",
+   "type": "word",
+   "start": 29.3091,
+   "end": 29.6
+  },
+  {
+   "text": "decide.",
+   "type": "word",
+   "start": 29.6727,
+   "end": 30.2476
+  }
+ ]
+}

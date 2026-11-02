@@ -1,0 +1,110 @@
+{
+  "cues": [
+    {
+      "voice": "voiceover",
+      "file": "assets/voice.wav",
+      "time": 0.15,
+      "gain_db": 0,
+      "duck_db": -22
+    },
+    {
+      "voice": "music",
+      "file": "assets/teaser-audio.wav",
+      "time": 13.174,
+      "gain_db": -9,
+      "duck_db": -14
+    },
+    {
+      "voice": "bed",
+      "levels": [
+        [
+          0,
+          0.07
+        ],
+        [
+          13,
+          0.08
+        ],
+        [
+          19,
+          0.03
+        ],
+        [
+          24,
+          0.08
+        ],
+        [
+          29.5,
+          0.1
+        ],
+        [
+          31,
+          0
+        ]
+      ],
+      "gain": 0.5
+    },
+    {
+      "time": 3.333,
+      "voice": "whoosh",
+      "duration": 0.35,
+      "gain": 0.08,
+      "pan_from": 0.4,
+      "pan_to": -0.1
+    },
+    {
+      "time": 4.665,
+      "voice": "whoosh",
+      "duration": 0.3,
+      "gain": 0.07,
+      "pan_from": 0.2,
+      "pan_to": -0.8
+    },
+    {
+      "time": 13.174,
+      "voice": "whoosh",
+      "duration": 0.4,
+      "gain": 0.09
+    },
+    {
+      "time": 20.083,
+      "voice": "whoosh",
+      "duration": 0.3,
+      "gain": 0.06
+    },
+    {
+      "time": 23.21,
+      "voice": "whoosh",
+      "duration": 0.35,
+      "gain": 0.07,
+      "pan_from": -0.8,
+      "pan_to": 0.1
+    },
+    {
+      "time": 25.168,
+      "voice": "riser",
+      "end": 25.584,
+      "gain": 0.1
+    },
+    {
+      "time": 9.459,
+      "voice": "ticks",
+      "count": 24,
+      "spacing": 0.0588,
+      "gain": 0.03
+    },
+    {
+      "time": 10.95,
+      "voice": "ticks",
+      "count": 14,
+      "spacing": 0.0667,
+      "gain": 0.03
+    },
+    {
+      "voice": "room",
+      "seconds": 1.6,
+      "decay": 0.4,
+      "wet": 0.25
+    }
+  ]
+}
